@@ -6,6 +6,10 @@ from .views import *
 app_name = 'account'
 
 urlpatterns = [
+   path('', LoginView.as_view(
+        template_name='login.html'
+    ), name='login'),
+   
     path('signup/', CreateView.as_view(
         template_name='signup.html',
         form_class=CustomUserCreationForm,
